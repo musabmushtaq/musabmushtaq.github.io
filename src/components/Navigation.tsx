@@ -27,11 +27,11 @@ export const Navigation: React.FC<NavigationProps> = ({ activeTab, setActiveTab 
     }}>
       <div style={{
         display: 'flex',
-        gap: '0.3rem',
+        gap: 'clamp(0.15rem, 1vw, 0.4rem)',
         background: 'rgba(18, 18, 18, 0.75)',
         backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)',
-        padding: '0.4rem',
+        padding: '0.35rem',
         borderRadius: 'var(--radius-xl)',
         border: 'var(--glass-border)',
         boxShadow: '0 12px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0px rgba(255, 255, 255, 0.05)',
@@ -44,13 +44,13 @@ export const Navigation: React.FC<NavigationProps> = ({ activeTab, setActiveTab 
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               style={{
-                padding: '6px 14px',
+                padding: '6px clamp(8px, 2.5vw, 14px)',
                 borderRadius: 'var(--radius-xl)',
                 color: isActive ? '#000000' : 'var(--text-secondary)',
                 background: isActive ? 'var(--accent-gradient)' : 'transparent',
                 fontWeight: isActive ? '600' : '500',
                 transition: 'all var(--transition-fast)',
-                fontSize: '0.85rem',
+                fontSize: 'clamp(0.75rem, 2.5vw, 0.85rem)',
                 boxShadow: isActive ? '0 4px 12px rgba(177, 156, 217, 0.3)' : 'none'
               }}
             >

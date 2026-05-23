@@ -15,7 +15,7 @@ export const Timeline: React.FC<TimelineProps> = ({ data }) => {
         {/* Vertical line */}
         <div style={{ 
           position: 'absolute', 
-          left: '18px', 
+          left: 'clamp(14px, 4vw, 18px)', 
           top: '0', 
           bottom: '0', 
           width: '2px', 
@@ -24,11 +24,11 @@ export const Timeline: React.FC<TimelineProps> = ({ data }) => {
         }}></div>
 
         {data.experience.map((exp) => (
-          <div key={exp.id} style={{ display: 'flex', gap: '1.25rem', position: 'relative', zIndex: 1 }}>
+          <div key={exp.id} style={{ display: 'flex', gap: 'clamp(0.75rem, 3vw, 1.25rem)', position: 'relative', zIndex: 1 }}>
             {/* Timeline node */}
             <div style={{ 
-              width: '38px', 
-              height: '38px', 
+              width: 'clamp(30px, 8vw, 38px)', 
+              height: 'clamp(30px, 8vw, 38px)', 
               borderRadius: '50%', 
               background: 'var(--bg-secondary)', 
               border: '2px solid var(--accent-lavender)',
@@ -38,7 +38,7 @@ export const Timeline: React.FC<TimelineProps> = ({ data }) => {
               flexShrink: 0,
               boxShadow: '0 0 10px rgba(177, 156, 217, 0.15)'
             }}>
-              <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent-lavender)' }}></div>
+              <div style={{ width: 'clamp(6px, 2vw, 8px)', height: 'clamp(6px, 2vw, 8px)', borderRadius: '50%', background: 'var(--accent-lavender)' }}></div>
             </div>
             
             {/* Content box */}

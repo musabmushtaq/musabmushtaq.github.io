@@ -19,7 +19,7 @@ function App() {
         maxWidth: '1000px', 
         width: '100%', 
         margin: '0 auto', 
-        padding: '5.5rem 2rem 5rem 2rem',
+        padding: '5.5rem clamp(1rem, 5vw, 2rem) 5rem clamp(1rem, 5vw, 2rem)',
         display: 'flex',
         flexDirection: 'column'
       }}>
