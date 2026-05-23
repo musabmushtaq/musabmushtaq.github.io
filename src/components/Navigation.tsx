@@ -1,4 +1,7 @@
-export type TabType = 'home' | 'experience' | 'projects' | 'contact';
+import React from 'react';
+import { motion } from 'framer-motion';
+
+export type TabType = 'home' | 'experience' | 'projects';
 
 interface NavigationProps {
   activeTab: TabType;
@@ -10,7 +13,6 @@ export const Navigation: React.FC<NavigationProps> = ({ activeTab, setActiveTab 
     { id: 'home', label: 'Home' },
     { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
-    { id: 'contact', label: 'Contact' },
   ];
 
   return (
@@ -44,16 +46,31 @@ export const Navigation: React.FC<NavigationProps> = ({ activeTab, setActiveTab 
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               style={{
-                padding: '6px clamp(8px, 2.5vw, 14px)',
+                position: 'relative',
+                padding: '6px clamp(12px, 2.5vw, 18px)',
                 borderRadius: 'var(--radius-xl)',
                 color: isActive ? '#000000' : 'var(--text-secondary)',
-                background: isActive ? 'var(--accent-gradient)' : 'transparent',
                 fontWeight: isActive ? '600' : '500',
-                transition: 'all var(--transition-fast)',
+                transition: 'color var(--transition-fast)',
                 fontSize: 'clamp(0.75rem, 2.5vw, 0.85rem)',
-                boxShadow: isActive ? '0 4px 12px rgba(177, 156, 217, 0.3)' : 'none'
+                backgroundColor: 'transparent',
+                zIndex: 1,
               }}
             >
+              {isActive && (
+                <motion.div
+                  layoutId="nav-pill"
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'var(--accent-gradient)',
+                    borderRadius: 'var(--radius-xl)',
+                    zIndex: -1,
+                    boxShadow: '0 4px 12px rgba(177, 156, 217, 0.3)'
+                  }}
+                  transition={{ type: 'spring', stiffness: 600, damping: 25 }}
+                />
+              )}
               {tab.label}
             </button>
           );

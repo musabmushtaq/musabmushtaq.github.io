@@ -6,9 +6,9 @@ interface BentoProjectsProps {
 
 export const BentoProjects: React.FC<BentoProjectsProps> = ({ data }) => {
   return (
-    <div className="animate-fade-in" style={{ padding: '1rem 0' }}>
+    <div style={{ padding: 'clamp(1rem, 6vw, 3rem) 0' }}>
       <h2 style={{ fontSize: 'clamp(1.8rem, 5vw, 2.2rem)', marginBottom: '2rem' }}>
-        Selected <span className="gradient-text">Projects</span>
+        <span className="gradient-text">Projects</span>
       </h2>
       
       <div style={{ 
